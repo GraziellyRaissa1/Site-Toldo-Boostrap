@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Toldos Zona Norte oferece soluções em coberturas, toldos e placas personalizadas com qualidade e inovação.">
+    <meta name="keywords" content="toldos, coberturas, toldos zona norte, placas, toldos e cortinas, São Paulo">
+    <meta name="author" content="Toldos Zona Norte">
+    <title>toldoszonanorte</title>
+    <link rel="stylesheet" href="cobertura.html">
+    <link rel="stylesheet" href="toldoCortina.html">
+    <link rel="stylesheet" href="placa.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome sem o atributo integrity -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Adicionando o favicon -->
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Estilizações do Navbar */
+        .navbar-nav {
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nav-item+.nav-item {
+            margin-left: 150px;
+        }
+
+        .navbar-brand {
+            margin-right: auto;
+            margin-left: auto;
+            /* Adiciona margem esquerda automática para centralizar o logo */
+        }
+
+        .navbar-brand img {
+            width: 70px;
+        }
+
+        .nav-link {
+            color: black !important;
+        }
+
+        .nav-link:hover {
+            color: #f05a28 !important;
+        }
+
+        /* Estilo para dispositivos menores */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+                /* Alinha os itens no centro */
+            }
+
+            .nav-item+.nav-item {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .navbar-brand {
+                margin: 0 auto;
+                /* Centraliza o logo em telas menores */
+            }
+        }
+
+
+        .carousel-item img {
+            filter: brightness(0.7);
+            height: 600px;
+            /* Altura máxima do carousel */
+            object-fit: cover;
+            /* Manter a proporção das imagens */
+        }
+
+        .service-img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: none;
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .service-img.enlarged {
+            transform: scale(1.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel,
+        .service-img {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: rotateY(360deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-us {
+            background-color: #f05a28;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .value-card {
+            background-color: #fff48d;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.6s ease, box-shadow 0.3s ease;
+            gap: 10px;
+            /* Espaço entre o ícone e o texto */
+        }
+
+        .value-card:hover {
+            transform: rotateY(360deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .container-values {
+            display: flex;
+            flex-wrap: wrap;
+            /* Permitir quebra de linha */
+            justify-content: center;
+            /* Centralizar cards */
+        }
+
+        .value-card-margin {
+            margin-top: 25px;
+        }
+
+        .section-spacing {
+            margin-bottom: 100px;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            color: #ff841f;
+            padding: 20px 0;
+        }
+
+        .footer .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .footer .logo img {
+            width: 300px;
+            /* Ajustar a largura da logo no footer */
+            height: auto;
+            /* Manter a proporção da imagem */
+        }
+
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            /* Espaço entre os itens */
+        }
+
+        .footer .social-links a {
+            color: #f05a28;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .footer .social-links i {
+            font-size: 24px;
+            margin-right: 5px;
+            /* Espaço entre o ícone e o texto */
+        }
+
+        .footer .social-links a:hover {
+            color: #ffae61;
+            /* Laranja um pouco mais claro */
+        }
+
+        .footer .contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            /* Espaço entre os itens */
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer .contact p {
+            margin: 0;
+        }
+
+        .line {
+            height: 1px;
+            background-color: #f05a28;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                /* Mudar a direção da navbar em telas menores */
+            }
+
+            .nav-item+.nav-item {
+                margin-left: 0;
+                /* Remover margens laterais para itens de navegação */
+                margin-top: 10px;
+                /* Adicionar margens verticais */
+            }
+
+            .value-card {
+                width: 100%;
+                /* Ajustar largura dos cartões para mobile */
+                height: auto;
+                /* Ajustar altura dos cartões para mobile */
+                margin: 10px 0;
+                /* Margem entre cartões */
+            }
+
+            .container-values {
+                flex-direction: column;
+                /* Mudar para coluna no mobile */
+                align-items: center;
+                /* Centralizar no meio */
+            }
+
+            .carousel-item img {
+                height: 300px;
+                /* Ajustar altura das imagens no carousel para mobile */
+            }
+        }
+
+        @media (min-width: 769px) {
+            .value-card {
+                width: 300px;
+                /* Largura para desktop */
+                height: 70px;
+                /* Altura para desktop */
+            }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            /* Ajuste a largura conforme necessário */
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+
+        @media (max-width: 768px) {
+            .footer .contact {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .footer .social-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+
+            /* Estilização Whatsaap */
+        }
+
+        whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            /* Remove a linha debaixo do ícone */
+            color: #ffffff;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            /* Remove a linha debaixo do ícone */
+            color: #ffffff;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1da851;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 50%;
+            right: calc(100% + 10px);
+            /* Posiciona o tooltip à direita do ícone com espaço adicional */
+            transform: translateY(50%);
+            background-color: #ffffff;
+            color: #000000;
+            padding: 8px 12px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            visibility: visible;
+            /* Sempre visível */
+            opacity: 1;
+            /* Sempre visível */
+            font-size: 14px;
+            z-index: 1000;
+            /* Garante que o tooltip fique sobre outros elementos */
+        }
+
+        .fab.fa-whatsapp {
+            font-size: 30px;
+            /* Ajusta o tamanho do ícone */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light animate__animated animate__fadeInDown">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/Logo.png" alt="Logo da Toldos Zona Norte"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#topo">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide section-spacing animate__animated animate__fadeIn"
+        data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/Cobertura Policarbonato Compacto8.jpg" class="d-block w-100"
+                    alt="Cobertura em Policarbonato Compacto">
+            </div>
+            <div class="carousel-item">
+                <img src="img/Toldo1.jpg" class="d-block w-100" alt="Toldo em lona">
+            </div>
+            <div class="carousel-item">
+                <img src="img/Cobertura em lona.jpg" class="d-block w-100" alt="Cobertura em Lona">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Serviços -->
+    <div class="container section-spacing" id="servicos">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <a href="cobertura.html" class="text-decoration-none">
+                    <div class="card animate__animated animate__fadeInUp">
+                        <img src="img/Cobertura Policarbonato Compacto8.jpg" class="card-img-top service-img"
+                            alt="Serviço de Cobertura em Policarbonato Compacto">
+                        <div class="card-body">
+                            <h5 class="card-title">Coberturas</h5>
+                            <p class="card-text">Oferecemos coberturas de alta qualidade que combinam resistência e
+                                estética, ideais para varandas, garagens e áreas externas.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="toldoCortina.html" class="text-decoration-none">
+                    <div class="card animate__animated animate__fadeInUp">
+                        <img src="img/Toldo aveolar.jpg" class="card-img-top service-img"
+                            alt="Serviço de Toldo Aveolar">
+                        <div class="card-body">
+                            <h5 class="card-title">Toldos & Cortinas</h5>
+                            <p class="card-text">Nossos toldos & cortinas oferecem praticidade e conforto, protegendo
+                                seus ambientes do
+                                sol e da chuva com um design moderno e funcional.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-4">
+                <a href="placa.html" class="text-decoration-none">
+                    <div class="card animate__animated animate__fadeInUp">
+                        <img src="img/Placa.jpg" class="card-img-top service-img"
+                            alt="Serviço de Placas Personalizadas">
+                        <div class="card-body">
+                            <h5 class="card-title">Placas</h5>
+                            <p class="card-text">Oferecemos placas personalizadas e de alta qualidade para todas as
+                                necessidades: sinalização, identificação e decoração.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sobre nós -->
+    <div class="container section-spacing" id="sobre-nos">
+        <div class="row">
+            <div class="col-12">
+                <div class="about-us animate__animated animate__fadeInUp">
+                    <h2>Sobre nós</h2>
+                    <p>Estar presente no dia a dia dos clientes é nosso foco. Unir tecnologia, design e sofisticação em
+                        um só é nossa estratégia.
+
+                        Conhecendo a fundo as necessidades dos clientes e buscando aumentar sua satisfação, a Toldos
+                        Zona Norte busca sempre o melhor em termos de qualidade e inovação, transformando-se numa
+                        empresa completa em soluções de toldos, coberturas, fechamento de áreas e garagens.
+
+                        O objetivo é conquistar ainda mais espaço e visibilidade em um mercado em constante ampliação e
+                        acelerado progresso tecnológico, arquitetura moderna e design.
+
+                        A Toldos Zona Norte, atua no mercado a 11 Anos, na Zona Norte mas, prestando serviços em todo
+                        estado de São Paulo.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nossos valores -->
+    <div class="container section-spacing">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Nossos Valores</h2>
+            </div>
+        </div>
+        <div class="container-values">
+            <div class="col value-card animate__animated animate__fadeInUp value-card-margin">
+                <i class="fas fa-handshake"></i>
+                <h5>Confiança</h5>
+            </div>
+            <div class="col value-card animate__animated animate__fadeInUp value-card-margin">
+                <i class="fas fa-check-circle"></i>
+                <h5>Qualidade</h5>
+            </div>
+            <div class="col value-card animate__animated animate__fadeInUp value-card-margin">
+                <i class="fas fa-star"></i>
+                <h5>Excelência</h5>
+            </div>
+            <div class="col value-card animate__animated animate__fadeInUp value-card-margin">
+                <i class="fas fa-users"></i>
+                <h5>Compromisso</h5>
+            </div>
+            <div class="col value-card animate__animated animate__fadeInUp value-card-margin">
+                <i class="fas fa-lightbulb"></i>
+                <h5>Inovação</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer" class="footer mt-5 animate__animated animate__fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center gap-4 contact">
+                    <div class="logo mb-3">
+                        <img src="img/Logo.png" alt="Logo" style="width: 200px; height: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center gap-4 contact">
+                    <p><i class="fas fa-envelope"></i> laerciotoldozonanorte@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 98540-8756</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/toldoszonanorte/" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i> toldoszonanorte
+                        </a>
+                        <a href="https://www.facebook.com/newsartstec/" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i> News Art's Comunicação Visual
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2013 Toldos Zona Norte. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/5511985408756" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="tooltip">
+            <span class="tooltip-text"> Faça o seu orçamento! </span>
+        </div>
+    </a>
+
+    <!-- Link para a fonte do ícone do WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
